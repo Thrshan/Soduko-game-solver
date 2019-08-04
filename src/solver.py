@@ -1,4 +1,5 @@
 import numpy as np
+import os
 
 # Checks for the position i, j is valid for number x
 def valid_position(board, i, j, x):
@@ -8,7 +9,10 @@ def valid_position(board, i, j, x):
         return False
     return True
 
-puzzle_file = open('puzzle1.txt', 'r')  # text file containing sudoku
+
+script_dir = os.path.dirname(__file__)
+ex_file = os.path.abspath(os.path.join(script_dir, '../example/puzzle1.txt'))
+puzzle_file = open(ex_file, 'r')  # text file containing sudoku
 log_file = open('log.txt', 'w')
 
 # Initializing all the required variables

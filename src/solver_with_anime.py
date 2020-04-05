@@ -12,7 +12,7 @@ sb.set(font_scale=1.5)
 def valid_position(board, i, j, x):
     mod_i = (((( i + 1 ) * 2 // 7 ) + 1 ) * 3 )
     mod_j = (((( j + 1 ) * 2 // 7 ) + 1 ) * 3 )
-    if x in board[i, :] or x in board[:, j] or x in board[mod_i - 3: mod_i, mod_j - 3: mod_j,]:
+    if x in board[i, :] or x in board[:, j] or x in board[mod_i - 3: mod_i, mod_j - 3: mod_j]:
         return False
     return True
 
@@ -64,7 +64,7 @@ while True:
                                       vmax=1 )
 #                plt.axhline(y=3);plt.axhline(y=6)
                 plt.show()
-                plt.pause(0.05)
+                plt.pause(0.5)
                 
                 break
         else:  # Tried 1-9 in the slot i, j and nothing fits, Go back and relace what you added last with next new valid number
